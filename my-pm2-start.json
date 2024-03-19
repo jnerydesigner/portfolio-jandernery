@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "portfolio-jandernery",
+            "script": "npm",
+            "args" : "start"
+        }
+    ]
+}
