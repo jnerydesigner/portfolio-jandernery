@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={roboto.className}>
-        <header className="w-[100%] h-[100vh] flex justify-start items-center flex-col bg-portfolio-bg1">
+        <header className="w-[100%] h-[100vh] flex justify-start items-center flex-col bg-portfolio-color02">
           {children}
         </header>
       </body>

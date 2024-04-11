@@ -7,12 +7,13 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors:{
-      portfolio:{
-        bg1: "#142530",
-        bg2: "#132C32",
-        bg3: "#02EA5F",
-      }
+    colors: {
+      portfolio: {
+        color01: "#142530",
+        color02: "#132C32",
+        color03: "#02EA5F",
+        color04: "#D9D9D9",
+      },
     },
     extend: {
       backgroundImage: {
