@@ -9,9 +9,11 @@ const MainPortfolio = () => {
             <p className="text-[4rem] text-portfolio-color03">Olá</p>
             <p className="text-[4rem]">🖐️</p>
           </div>
-          <h2 className="text-[6rem]">
-            Eu sou{" "}
-            <span className="bold text-portfolio-color03">Jander Nery</span>
+          <h2 className="text-[6rem] text-portfolio-color04">
+            Eu sou
+            <span className="bold text-portfolio-color03 ml-3">
+              Jander Nery
+            </span>
           </h2>
           <p className="text-[1.2rem] text-portfolio-color04">
             Eu sou um Desenvolvedor web que trabalha com tecnologias como React,
