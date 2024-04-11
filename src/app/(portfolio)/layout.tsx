@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
-import "./globals.css";
+import "../../app/globals.css";
+import Header from "./components/header";
+import MainPortfolio from "./components/main";
+import FooterPortfolio from "./components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -19,8 +22,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>{children}</body>
+    <html lang="pt-br">
+      <body className={roboto.className}>
+        <header className="w-[100%] h-[100vh] flex justify-start items-center flex-col bg-portfolio-bg1">
+          {children}
+        </header>
+      </body>
     </html>
   );
 }
