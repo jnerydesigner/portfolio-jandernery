@@ -17,5 +17,10 @@
         "titleBar.activeForeground": "#e7e7e7",
         "titleBar.inactiveBackground": "#e0234e99",
         "titleBar.inactiveForeground": "#e7e7e799"
-    }
+    },
+    "cSpell.words": [
+        "jander",
+        "nery",
+        "Sobre"
+    ]
 }

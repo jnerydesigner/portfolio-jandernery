@@ -13,6 +13,7 @@ const config: Config = {
         color02: "#132C32",
         color03: "#02EA5F",
         color04: "#D9D9D9",
+        color05: "#6dd200",
       },
     },
     extend: {

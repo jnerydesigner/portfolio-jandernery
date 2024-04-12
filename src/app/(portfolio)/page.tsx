@@ -1,3 +1,6 @@
+"use client";
+
+import { AppWrapper } from "@/context/app.context";
 import FooterPortfolio from "./components/footer";
 import Header from "./components/header";
 import MainPortfolio from "./components/main";
@@ -5,9 +8,11 @@ import MainPortfolio from "./components/main";
 export default function Home() {
   return (
     <>
-      <Header />
-      <MainPortfolio />
-      <FooterPortfolio />
+      <AppWrapper>
+        <Header />
+        <MainPortfolio />
+        <FooterPortfolio />
+      </AppWrapper>
     </>
   );
 }
