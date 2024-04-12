@@ -46,7 +46,9 @@ const MainPortfolio = () => {
           </div>
 
           <a
-            href="#"
+            href="/curriculo_jander_da_costa_nery.pdf"
+            target="_blank"
+            download="Curriculo Jander Nery"
             className="w-[300px] h-[50px] my-6 bg-portfolio-color03 rounded-full flex justify-center items-center flex-row text-portfolio-color01 bold shadow-xl border-[1px] border-portfolio-color05 gap-4"
           >
             <span className="font-bold">Download Curriculo</span>
