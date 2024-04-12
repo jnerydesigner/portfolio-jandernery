@@ -36,7 +36,7 @@ const MainPortfolio = () => {
             </div>
           </h2>
           <p className="text-[1.2rem] text-portfolio-color04">
-            {information?.[1]?.skill?.title}
+            {information?.[language]?.skill?.title}
           </p>
 
           <div className="w-[90%] h-[100px] mt-4 border  border-portfolio-color03 bg-portfolio-color01 flex justify-center items-center rounded-2xl p-2">
