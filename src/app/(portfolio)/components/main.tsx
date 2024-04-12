@@ -14,7 +14,7 @@ const MainPortfolio = () => {
   const { language } = useAppContext();
 
   return (
-    <div className="w-[70%] h-[80vh] flex justify-center items-center flex-row bg-portfolio-color02">
+    <div className="w-[70%] h-[84vh] flex justify-center items-center flex-row bg-portfolio-color02">
       <div className="w-[100%] h-[400px] flex justify-center items-center">
         <div className="w-[90%] h-[400px]">
           <div className="h-[50px] flex justify-start items-center flex-row mb-8 gap-4">

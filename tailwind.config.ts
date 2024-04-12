@@ -16,7 +16,17 @@ const config: Config = {
         color05: "#6dd200",
       },
     },
+    screens: {
+      mobile: "320px",
+      tablet: "768px",
+      laptop: "1024px",
+      desktop: "1280px",
+    },
     extend: {
+      dropShadow: {
+        top: "0 -5px 5px rgba(76, 209, 55,.3)",
+        bottom: "0 5px 5px rgba(76, 209, 55,.3)",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
