@@ -1,3 +1,5 @@
+const year = new Date().getFullYear();
+
 export const Information: InformationType[] = [
   {
     salutation: {
@@ -27,6 +29,9 @@ export const Information: InformationType[] = [
         title: "Projetos",
       },
     ],
+    footer: {
+      message: `Todos os direitos reservados para Jander Nery - seligadev.com.br - ${year}`,
+    },
   },
   {
     salutation: {
@@ -56,6 +61,9 @@ export const Information: InformationType[] = [
         title: "Projects",
       },
     ],
+    footer: {
+      message: `All rights reserved for Jander Nery - seligadev.com.br - ${year}`,
+    },
   },
 ];
 
@@ -78,9 +86,14 @@ type TitleNavigation = {
   title: string;
 };
 
+type FooterType = {
+  message: string;
+};
+
 type InformationType = {
   salutation: SalutationType;
   personal: PersonalType;
   skill: SkillType;
   titleNavigation: TitleNavigation[];
+  footer: FooterType;
 };
