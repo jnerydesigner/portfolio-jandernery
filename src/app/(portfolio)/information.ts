@@ -9,7 +9,7 @@ export const Information: InformationType[] = [
       message: "Jander Nery",
     },
     skill: {
-      title: "Eu sou um Desenvolvedor web que trabalha com tecnologias como:",
+      title: "Eu sou um Desenvolvedor Web que trabalha com tecnologias como:",
       message:
         "NodeJS (NestJS) React, Next.js, Tailwind CSS, Express, MongoDB, Java (Spring Boot) entre outras.",
     },
@@ -38,7 +38,7 @@ export const Information: InformationType[] = [
       message: "Jander Nery",
     },
     skill: {
-      title: "I am a web developer who works with technologies such as:",
+      title: "I am a Web developer who works with technologies such as:",
       message:
         "NodeJS (NestJS) React, Next.js, Tailwind CSS, Express, MongoDB, Java (Spring Boot) among others.",
     },

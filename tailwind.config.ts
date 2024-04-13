@@ -18,7 +18,7 @@ const config: Config = {
     },
     screens: {
       mobile: "320px",
-      tablet: "768px",
+      tablet: "780px",
       laptop: "1024px",
       desktop: "1280px",
     },
@@ -26,6 +26,7 @@ const config: Config = {
       dropShadow: {
         top: "0 -5px 5px rgba(76, 209, 55,.3)",
         bottom: "0 5px 5px rgba(76, 209, 55,.3)",
+        total: "0 0 5px rgba(76, 209, 55,1)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
