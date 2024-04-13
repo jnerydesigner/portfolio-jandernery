@@ -14,7 +14,7 @@ const MainPortfolio = () => {
   const { language } = useAppContext();
 
   return (
-    <div className="w-[100%] tablet:w-[90%] laptop:w-[80%] h-[100%] tablet:h-[80%] flex justify-center items-center flex-col laptop:flex-row mt-4 mb-8 bg-portfolio-color02">
+    <div className="w-[100%] tablet:w-[90%] laptop:w-[80%] h-[100%] tablet:h-[80%] flex justify-center items-center flex-col laptop:flex-row mt-[80px] tablet:mt-8 laptop:mt-8 mb-8 bg-portfolio-color02">
       <div className="w-[100%] laptop:w-[25%] h-[320px] flex justify-center items-center mt-0 laptop:mt-2 p-1 mx-2">
         <div className="w-[260px] tablet:w:[260px] laptop:w:[330px] rounded-full flex justify-center items-center drop-shadow-total ">
           <Image
