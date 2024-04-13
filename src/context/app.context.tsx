@@ -11,7 +11,7 @@ const AppContext = createContext<AppContextType>({
 });
 
 export function AppWrapper({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<number>(0);
+  const [language, setLanguage] = useState<number>(1);
 
   const changeLanguage = (choiceLanguageNumber: number) => {
     setLanguage(choiceLanguageNumber);

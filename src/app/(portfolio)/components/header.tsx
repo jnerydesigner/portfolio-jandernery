@@ -1,11 +1,13 @@
 import { useAppContext } from "@/context/app.context";
 import Image from "next/image";
 import { Information } from "../information";
+import Link from "next/link";
 
 const information = Information;
 
 const Header = () => {
   const { changeLanguage, language } = useAppContext();
+
   return (
     <>
       <Image
@@ -19,10 +21,14 @@ const Header = () => {
         <div className="w-[90% tablet:w-[100%] h-[200px] laptop:w-[80%] tablet:h-[10vh] flex justify-center items-center flex-col tablet:flex-row text-portfolio-color03 ">
           <ul className="w-[100%] tablet:w-[80%] flex justify-between items-center flex-col tablet:flex-row tablet:px-10 gap-2">
             <li className="w-full h-10 flex justify-center items-center">
-              {information?.[language]?.titleNavigation[0].title}
+              <Link href="/">
+                {information?.[language]?.titleNavigation[0].title}
+              </Link>
             </li>
             <li className="w-full h-10 flex justify-center items-center">
-              {information?.[language]?.titleNavigation[1].title}
+              <Link href="/sobre">
+                {information?.[language]?.titleNavigation[1].title}
+              </Link>
             </li>
             <li className="w-full h-10 flex justify-center items-center">
               {information?.[language]?.titleNavigation[2].title}

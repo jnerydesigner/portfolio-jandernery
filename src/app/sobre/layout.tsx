@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Metadata } from "next";
 import "../styles/globals.css";
+
+import { Roboto } from "next/font/google";
+import { AppWrapper } from "@/context/app.context";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -14,9 +16,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="pt-br">
       <body className={roboto.className}>
