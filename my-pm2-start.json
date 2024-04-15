@@ -2,7 +2,7 @@
     "apps": [
         {
             "name": "portfolio-jandernery",
-            "script": "npm",
+            "script": "yarn",
             "args" : "start"
         }
     ]
