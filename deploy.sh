@@ -3,8 +3,8 @@ echo "Deploy Initialised"
 
 git pull origin main
 
-npm ci
+yarn install --frozen-lockfile
 
-npm run build
+yarn build
 
 pm2 restart portfolio-jandernery 
