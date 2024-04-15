@@ -74,6 +74,30 @@ export const Information: InformationType[] = [
       title: "Bem-vindo ao portfolio do Jander Nery!",
       message: messageAboutPT,
     },
+    contact: {
+      title:
+        "Quer entrar em contato comigo, preencha a ficha e eu ficarei muito feliz em te retornar 👍",
+      form: {
+        email: {
+          title: "Email",
+          placeholder: "Preencha seu email",
+        },
+        message: {
+          title: "Mensagem",
+        },
+        name: {
+          title: "Nome",
+          placeholder: "Preencha seu nome",
+        },
+        phone: {
+          title: "Telefone",
+          placeholder: "Preencha seu telefone",
+        },
+        btn: {
+          title: "Enviar",
+        },
+      },
+    },
   },
   {
     salutation: {
@@ -110,6 +134,30 @@ export const Information: InformationType[] = [
       title: "Welcome to Jander Nery's portfolio!",
       message: messageAboutEN,
     },
+    contact: {
+      title:
+        "If you want to get in touch with me, fill out the form and I will be very happy to get back to you. 👍",
+      form: {
+        email: {
+          title: "Email",
+          placeholder: "Enter your email",
+        },
+        message: {
+          title: "Message",
+        },
+        name: {
+          title: "Name",
+          placeholder: "Enter your name",
+        },
+        phone: {
+          title: "Phone",
+          placeholder: "Enter your phone",
+        },
+        btn: {
+          title: "Send",
+        },
+      },
+    },
   },
 ];
 
@@ -141,6 +189,31 @@ type AboutType = {
   message: string;
 };
 
+type ContactType = {
+  title: string;
+  form: {
+    btn: {
+      title: string;
+    };
+    name: {
+      title: string;
+      placeholder: string;
+    };
+    phone: {
+      title: string;
+      placeholder: string;
+    };
+    email: {
+      title: string;
+      placeholder: string;
+    };
+    message: {
+      title: string;
+      placeholder?: string;
+    };
+  };
+};
+
 type InformationType = {
   salutation: SalutationType;
   personal: PersonalType;
@@ -148,4 +221,5 @@ type InformationType = {
   titleNavigation: TitleNavigation[];
   footer: FooterType;
   about: AboutType;
+  contact: ContactType;
 };

@@ -7,6 +7,7 @@ import { useAppContext } from "@/context/app.context";
 import { IoIosCloudDownload } from "react-icons/io";
 import { FaPhone } from "react-icons/fa";
 import { MdMailOutline } from "react-icons/md";
+import { SocialMediaTab } from "./social-medias.tab";
 
 const information = Information;
 
@@ -49,7 +50,7 @@ const MainPortfolio = () => {
           {information?.[language]?.skill?.title}
         </p>
 
-        <div className="w-[100%] laptop:w-[90%] h-[100px] mt-4 border  border-portfolio-color03 flex justify-center items-center rounded-2xl p-2">
+        <div className="w-[100%] laptop:w-[90%] h-[130px] mt-4 border  border-portfolio-color03 flex justify-center items-center rounded-2xl p-2 py-5">
           <p className="text-[1.2rem] text-center laptop:text-justify laptop:text-[1.4rem] text-portfolio-color04">
             {information?.[language]?.skill?.message}
           </p>
@@ -77,6 +78,9 @@ const MainPortfolio = () => {
               jander.webmaster@gmail.com
             </p>
           </div>
+        </div>
+        <div className="my-10 flex justify-center items-center">
+          <SocialMediaTab />
         </div>
       </div>
     </div>

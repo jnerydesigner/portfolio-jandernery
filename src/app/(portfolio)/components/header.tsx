@@ -31,10 +31,14 @@ const Header = () => {
               </Link>
             </li>
             <li className="w-full h-10 flex justify-center items-center">
-              {information?.[language]?.titleNavigation[2].title}
+              <Link href="/contato">
+                {information?.[language]?.titleNavigation[2].title}
+              </Link>
             </li>
             <li className="w-full h-10 flex justify-center items-center">
-              {information?.[language]?.titleNavigation[3].title}
+              <Link href="/projetos">
+                {information?.[language]?.titleNavigation[3].title}
+              </Link>
             </li>
           </ul>
         </div>

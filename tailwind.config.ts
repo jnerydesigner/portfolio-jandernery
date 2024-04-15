@@ -14,6 +14,8 @@ const config: Config = {
         color03: "#02EA5F",
         color04: "#D9D9D9",
         color05: "#6dd200",
+        linkedin: "#0A66C2",
+        github: "#010409",
       },
     },
     screens: {
@@ -27,6 +29,7 @@ const config: Config = {
         top: "0 -5px 5px rgba(76, 209, 55,.3)",
         bottom: "0 5px 5px rgba(76, 209, 55,.3)",
         total: "0 0 5px rgba(76, 209, 55,1)",
+        total_opacity: "0 0 5px  rgba(76, 209, 55,.3)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
