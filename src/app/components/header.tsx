@@ -21,7 +21,7 @@ const Header = () => {
         <div className="w-[90% tablet:w-[100%] h-[200px] laptop:w-[80%] tablet:h-[10vh] flex justify-center items-center flex-col tablet:flex-row text-portfolio-color03 ">
           <ul className="w-[100%] tablet:w-[80%] flex justify-between items-center flex-col tablet:flex-row tablet:px-10 gap-2">
             <li className="w-full h-10 flex justify-center items-center">
-              <Link href="/">
+              <Link href="/portfolio">
                 {information?.[language]?.titleNavigation[0].title}
               </Link>
             </li>

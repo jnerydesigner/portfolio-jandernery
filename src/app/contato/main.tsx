@@ -1,7 +1,7 @@
 "use client";
 
 import { useAppContext } from "@/context/app.context";
-import { Information } from "../(portfolio)/information";
+import { Information } from "../information";
 import { IoIosSend } from "react-icons/io";
 
 const MainContact = () => {
