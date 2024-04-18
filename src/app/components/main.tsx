@@ -18,18 +18,19 @@ import { RiH1 } from "react-icons/ri";
 const information = Information;
 
 const MainPortfolio = () => {
-  const [technologies, setTechnologies] = useState<QueryResult>();
-
-  useEffect(() => {
-    pageData();
-  }, []);
+  const [data, setData] = useState<QueryResult>();
   const { language } = useAppContext();
 
-  const pageData = async () => {
-    const response = await PageHome();
-    console.log(response);
+  useEffect(() => {
+    pageData(language);
+  }, [language]);
 
-    setTechnologies(response);
+  const pageData = async (language: number) => {
+    const response = await PageHome(language);
+
+    console.log(response.pagesGenerals);
+
+    setData(response);
   };
 
   return (
@@ -76,7 +77,7 @@ const MainPortfolio = () => {
           </div> */}
 
           <div className="grid grid-cols-4 gap-4 mt-2">
-            {technologies?.technologies?.map((tech) => (
+            {data?.pagesGenerals[0].technologies.map((tech) => (
               <TechComponent
                 key={tech.slug}
                 techIcon={tech.techIcon}
