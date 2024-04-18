@@ -16,6 +16,7 @@ const config: Config = {
         color05: "#6dd200",
         linkedin: "#0A66C2",
         github: "#010409",
+        youtube: "#FF0000",
       },
     },
     screens: {

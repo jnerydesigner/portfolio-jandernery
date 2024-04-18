@@ -10,7 +10,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio de Jander Nery",
+  title: "Portfolio de Jander Nery - Página de Projetos",
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className="!scroll-smooth">
       <body className={roboto.className}>
         <header className="w-[100%] h-[auto] laptop:h-[100vh] flex justify-center items-center flex-col bg-portfolio-color02">
           {children}
