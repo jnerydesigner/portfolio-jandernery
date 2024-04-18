@@ -98,6 +98,25 @@ export const Information: InformationType[] = [
         },
       },
     },
+    btn: {
+      dowloadCurriculo: {
+        title: "Baixar Curriculo",
+      },
+    },
+    barProjects: [
+      {
+        title: "10+",
+        message: "Anos de experiência",
+      },
+      {
+        title: "30+",
+        message: "Projetos",
+      },
+      {
+        title: "10+",
+        message: "Empresas atuadas",
+      },
+    ],
   },
   {
     salutation: {
@@ -134,6 +153,7 @@ export const Information: InformationType[] = [
       title: "Welcome to Jander Nery's portfolio!",
       message: messageAboutEN,
     },
+
     contact: {
       title:
         "If you want to get in touch with me, fill out the form and I will be very happy to get back to you. 👍",
@@ -158,6 +178,25 @@ export const Information: InformationType[] = [
         },
       },
     },
+    btn: {
+      dowloadCurriculo: {
+        title: "Download Curriculo",
+      },
+    },
+    barProjects: [
+      {
+        title: "10+",
+        message: "Years of experience",
+      },
+      {
+        title: "30+",
+        message: "Projects",
+      },
+      {
+        title: "10+",
+        message: "Companies worked",
+      },
+    ],
   },
 ];
 
@@ -214,6 +253,17 @@ type ContactType = {
   };
 };
 
+type BtnNamesType = {
+  dowloadCurriculo: {
+    title: string;
+  };
+};
+
+type BarProjects = {
+  title: string;
+  message: string;
+};
+
 type InformationType = {
   salutation: SalutationType;
   personal: PersonalType;
@@ -222,4 +272,6 @@ type InformationType = {
   footer: FooterType;
   about: AboutType;
   contact: ContactType;
+  btn: BtnNamesType;
+  barProjects?: BarProjects[];
 };

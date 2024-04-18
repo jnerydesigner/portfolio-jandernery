@@ -8,18 +8,18 @@ const MainContact = () => {
   const { language } = useAppContext();
   const information = Information;
   return (
-    <div className="h-[90vh] w-[80%] flex justify-center flex-col items-center p-10">
-      <div className="h-[70vh] w-[80%] flex justify-center flex-col items-center p-10  ">
+    <div className="h-[90vh] w-[100%] laptop:w-[80%] flex justify-center flex-col items-center p-1 laptop:p-10">
+      <div className="h-[70vh] w-[100%] laptop:w-[80%] flex justify-center flex-col items-center p-1 laptop:p-10  ">
         <h2 className="text-4xl mb-10 text-center text-portfolio-color03 font-bold">
           {information?.[language]?.contact.title}
         </h2>
 
-        <div className="w-[80%] h-[70%] flex justify-center items-center border border-portfolio-color04 rounded-2xl">
-          <form action="" className="w-[50%] px-4 b">
-            <div className="flex justify-center items-center flex-row gap-4 p-2">
+        <div className="w-[100%] laptop:w-[80%] h-[100%] pt-2 pb-2 laptop:h-[70%] flex justify-center items-center border border-portfolio-color04 rounded-2xl">
+          <form action="" className="w-[100%]  laptop:w-[100%] laptop:px-4 ">
+            <div className="flex justify-center items-center flex-col laptop:flex-row gap-4 p-2">
               <label
                 htmlFor="name"
-                className="w-[30%] text-portfolio-color04 font-bold text-1xl"
+                className="w-[100%] text-center  laptop:w-[30%] text-portfolio-color04 font-bold text-1xl"
               >
                 {information?.[language]?.contact.form.name.title}
               </label>
@@ -32,10 +32,10 @@ const MainContact = () => {
                 }
               />
             </div>
-            <div className="flex justify-center items-center flex-row gap-4 p-2">
+            <div className="flex justify-center items-center flex-col laptop:flex-row gap-4 p-2">
               <label
                 htmlFor="phone"
-                className="w-[30%] text-portfolio-color04 font-bold text-1xl "
+                className="w-[100%] laptop:w-[30%] text-center  text-portfolio-color04 font-bold text-1xl "
               >
                 {information?.[language]?.contact.form.phone.title}
               </label>
@@ -49,10 +49,10 @@ const MainContact = () => {
               />
             </div>
 
-            <div className="flex justify-center items-center flex-row gap-4 p-2">
+            <div className="flex justify-center items-center flex-col laptop:flex-row gap-4 p-2">
               <label
                 htmlFor="mail"
-                className="w-[30%] text-portfolio-color04 font-bold text-1xl "
+                className="w-[100%] laptop:w-[30%] text-center  text-portfolio-color04 font-bold text-1xl "
               >
                 {information?.[language]?.contact.form.email.title}
               </label>
@@ -66,14 +66,14 @@ const MainContact = () => {
               />
             </div>
 
-            <div className="flex justify-center items-center flex-row gap-4 p-2">
+            <div className="flex justify-center items-center flex-col laptop:flex-row gap-4 p-2">
               <label
                 htmlFor="messenger"
-                className="w-[30%] text-portfolio-color04 font-bold text-1xl "
+                className="w-[100%] laptop:w-[30%] text-center text-portfolio-color04 font-bold text-1xl "
               >
                 {information?.[language]?.contact.form.message.title}
               </label>
-              <textarea className="w-[70%] p-2 rounded-md border-[1px] border-portfolio-color04 bg-portfolio-color02" />
+              <textarea className="w-[100%] laptop:w-[70%] p-2 rounded-md border-[1px] border-portfolio-color04 bg-portfolio-color02" />
             </div>
 
             <div className="flex justify-center items-center flex-row gap-4 p-2">
