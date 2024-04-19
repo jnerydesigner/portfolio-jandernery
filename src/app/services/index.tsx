@@ -39,6 +39,12 @@ interface ISocialMedia {
 
 interface IPageGenerals {
   id: string;
+  titleName: {
+    raw: RichTextContent;
+  };
+  introduction: {
+    raw: RichTextContent;
+  };
   abouts: IAbouts[];
   socialMedias: ISocialMedia[];
   technologies: ITechnology[];
@@ -56,6 +62,12 @@ export const PageHome = async (languageType?: number): Promise<QueryResult> => {
     query MyQuery {
       pagesGenerals(where: { _search: "${language}" }) {
         id
+        titleName{
+          raw
+        }
+        introduction{
+          raw
+        }
         abouts {
           id
           title
@@ -72,11 +84,12 @@ export const PageHome = async (languageType?: number): Promise<QueryResult> => {
           svgIcon
           url
         }
-        technologies {
+        technologies(first: 30) {
           id
           techName
           startDate
           slug
+          techIcon
         }
       }
     }

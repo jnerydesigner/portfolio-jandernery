@@ -17,7 +17,7 @@ const Header = () => {
         alt="Flag Brazil"
         className="absolute top-0 right-[0px] laptop:right-100 z-10 w-[150px] tablet:right-[100px] tablet:w-[200px] laptop:w-[150px] laptop:right-[0px]"
       />
-      <div className="w-[100%] tablet:w-[100%] laptop:w-[80%] h-[260px] tablet:h-[10vh] flex justify-center items-center flex-col tablet:flex-row  bg-portfolio-color02 relative drop-shadow-bottom">
+      <div className="w-[100%] tablet:w-[100%] laptop:w-[80%] h-[260px] tablet:h-[10vh] flex justify-center items-center flex-col tablet:flex-row  bg-portfolio-color02 relative drop-shadow-bottom mx-auto">
         <div className="w-[90% tablet:w-[100%] h-[200px] laptop:w-[80%] tablet:h-[10vh] flex justify-center items-center flex-col tablet:flex-row text-portfolio-color03 ">
           <ul className="w-[100%] tablet:w-[80%] flex justify-between items-center flex-col tablet:flex-row tablet:px-10 gap-2">
             <li className="w-full h-10 flex justify-center items-center">

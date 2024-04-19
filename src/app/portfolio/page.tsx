@@ -11,7 +11,7 @@ export default function Main() {
       <AppWrapper>
         <Header />
         <MainPortfolio />
-        <FooterPortfolio />
+        {/* <FooterPortfolio /> */}
       </AppWrapper>
     </>
   );

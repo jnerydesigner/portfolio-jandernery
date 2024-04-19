@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+/* Shape divider */
+
+.custom-shape-divider-bottom-1713557522 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1713557522 svg {
+    position: relative;
+    display: block;
+    width: calc(133% + 1.3px);
+    height: 66px;
+}
+
+.custom-shape-divider-bottom-1713557522 .shape-fill {
+    fill: blue
+}
+
+.gradientTitleSection {
+    background: rgb(2, 234, 95);
+    background: linear-gradient(90deg, rgba(2, 234, 95, 1) 0%, rgba(109, 210, 0, 1) 50%, rgba(2, 234, 95, 1) 100%);
+}

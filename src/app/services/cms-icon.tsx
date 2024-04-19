@@ -1,8 +1,9 @@
 interface IHygraphIcon {
   icon: string;
+  style?: string;
 }
 
-export const CmsIcon = ({ icon }: IHygraphIcon) => {
+export const CmsIcon = ({ icon, style }: IHygraphIcon) => {
   return (
     <div
       dangerouslySetInnerHTML={{
