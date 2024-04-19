@@ -28,6 +28,11 @@ export const RichText = ({ ...props }: RichTextProps) => {
             {children}
           </strong>
         ),
+        h2: ({ children }) => (
+          <h2 className="text-[2rem] laptop:text-[4rem] tablet:text-[3rem] text-portfolio-color04">
+            <strong className="font-bold antialiased">{children}</strong>
+          </h2>
+        ),
       }}
     />
   );
