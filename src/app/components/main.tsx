@@ -118,7 +118,7 @@ const MainPortfolio = () => {
         </div>
         <section className="mt-10  h-[auto] w-[90%] flex justify-center items-center flex-col">
           <div className="w-full h-[50] gradientTitleSection p-4 flex justify-center items-center rounded-xl">
-            <h2 className="text-[2rem]">Tecnologies</h2>
+            <h2 className="text-[2rem]">Technologies</h2>
           </div>
           {data?.pagesGenerals[0].technologies ? (
             <ProjectTechnologies
