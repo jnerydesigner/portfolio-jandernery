@@ -8,11 +8,7 @@ import MainPortfolio from "../components/main";
 export default function Main() {
   return (
     <>
-      <AppWrapper>
-        <Header />
-        <MainPortfolio />
-        {/* <FooterPortfolio /> */}
-      </AppWrapper>
+      <MainPortfolio />
     </>
   );
 }

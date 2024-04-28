@@ -8,11 +8,7 @@ import MainContact from "./main";
 export default function Projects() {
   return (
     <>
-      <AppWrapper>
-        <Header />
-        <MainContact />
-        <FooterPortfolio />
-      </AppWrapper>
+      <MainContact />
     </>
   );
 }

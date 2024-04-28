@@ -24,7 +24,6 @@ export const ProjectTechnologies = ({
             style="mb-4"
           />
           <p>{tech.techName}</p>
-          {/* <p>Desde Abril de 2018</p> */}
           <p className="text-center">{calculateElapsedTime(tech.startDate)}</p>
         </div>
       ))}

@@ -8,11 +8,7 @@ import MainAbout from "./main";
 export default function Sobre() {
   return (
     <>
-      <AppWrapper>
-        <Header />
-        <MainAbout />
-        <FooterPortfolio />
-      </AppWrapper>
+      <MainAbout />
     </>
   );
 }
