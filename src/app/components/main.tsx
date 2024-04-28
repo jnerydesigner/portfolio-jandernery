@@ -7,18 +7,19 @@ import { Information } from "../information";
 import { useAppContext } from "@/context/app.context";
 
 import { IoIosCloudDownload } from "react-icons/io";
-import { FaPhone } from "react-icons/fa";
-import { MdMailOutline } from "react-icons/md";
+
 import { SocialMediaTab } from "./social-medias.tab";
 import BarProjects from "../_components/bar-projects";
-import { PageHome, QueryResult } from "../services";
+import { IProjectTecnologies, PageHome, QueryResult } from "../services";
 
 import { RichText } from "../_components/rich-text";
 import { Technologies as TechComponent } from "../_components/tecnologies";
 import { ProjectTechnologies } from "./project-tecnologies";
-import { Divider } from "../_components/divider";
 import { CmsIcon } from "../services/cms-icon";
 import { substitutionStrinHW } from "../utils/svg-height-width";
+import Section from "../_components/section.component";
+import CardProjects from "../_components/card-projects";
+import CardProjectCoponent from "../_components/card-projects.component";
 
 const information = Information;
 
@@ -80,6 +81,7 @@ const MainPortfolio = () => {
             <div className="grid grid-cols-10 gap-4 mt-2">
               {data?.pagesGenerals[0].technologies.map((tech) => (
                 <TechComponent
+                  id={tech.id}
                   key={tech.slug}
                   techIcon={tech.techIcon}
                   techName={tech.techName}
@@ -143,6 +145,13 @@ const MainPortfolio = () => {
             </div>
           </div>
         </div>
+        <Section title="Projects">
+          {data?.pagesGenerals[0].projectTecnologies
+            ? data?.pagesGenerals[0].projectTecnologies.map((project) => (
+                <CardProjectCoponent key={project.id} project={project} />
+              ))
+            : null}
+        </Section>
         <section className="mt-10  h-[auto] w-[90%] flex justify-center items-center flex-col">
           <div className="w-full h-[50] gradientTitleSection p-4 flex justify-center items-center rounded-xl">
             <h2 className="text-[2rem]">Technologies</h2>

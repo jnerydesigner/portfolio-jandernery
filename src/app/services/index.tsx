@@ -17,6 +17,7 @@ export const graphqlClient = new GraphQLClient(
 );
 
 export interface ITechnology {
+  id: string;
   slug: string;
   startDate: string;
   techIcon: string;
@@ -45,6 +46,19 @@ interface IPersonalData {
   description: string;
 }
 
+export interface IProjectTecnologies {
+  id: string;
+  title: string;
+  imageProject: {
+    url: string;
+  };
+  description: {
+    raw: RichTextContent;
+    text: string;
+  };
+  technologies: ITechnology[];
+}
+
 interface IPageGenerals {
   id: string;
   name: string;
@@ -57,6 +71,7 @@ interface IPageGenerals {
   introduction: {
     raw: RichTextContent;
   };
+  projectTecnologies: IProjectTecnologies[];
   abouts: IAbouts[];
   socialMedias: ISocialMedia[];
   technologies: ITechnology[];
@@ -89,6 +104,25 @@ export const PageHome = async (languageType?: number): Promise<QueryResult> => {
         }
         introduction{
           raw
+        }
+        projectTecnologies{
+          id
+          title
+          description{
+            raw
+            text
+          }
+          imageProject {
+            url
+          }
+          technologies{
+            id
+            techName
+            techIcon
+            startDate
+            slug
+          }
+          
         }
         abouts {
           id

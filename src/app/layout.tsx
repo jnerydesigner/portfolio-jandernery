@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./styles/globals.css";
 import { WrapperClient } from "./components/wrapper-client";
+import "react-tooltip/dist/react-tooltip.css";
 
 const roboto = Roboto({
   weight: ["400", "700"],
