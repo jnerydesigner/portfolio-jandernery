@@ -17,6 +17,8 @@ import { RichText } from "../_components/rich-text";
 import { Technologies as TechComponent } from "../_components/tecnologies";
 import { ProjectTechnologies } from "./project-tecnologies";
 import { Divider } from "../_components/divider";
+import { CmsIcon } from "../services/cms-icon";
+import { substitutionStrinHW } from "../utils/svg-height-width";
 
 const information = Information;
 
@@ -31,8 +33,6 @@ const MainPortfolio = () => {
   const pageData = async (language: number) => {
     const response = await PageHome(language);
 
-    console.log(response.pagesGenerals[0].technologies[0].techIcon);
-
     setData(response);
   };
 
@@ -42,13 +42,16 @@ const MainPortfolio = () => {
         <div className="w-[100%] flex justify-center items-center flex-row">
           <div className="w-[100%] laptop:w-[25%] h-[320px] flex justify-center items-center mt-0 laptop:mt-2 p-1 mx-2">
             <div className="w-[260px] tablet:w:[260px] laptop:w:[330px] rounded-full flex justify-center items-center drop-shadow-total ">
-              <Image
-                src="/foto_jander.png"
-                alt="Jander Nery"
-                width={200}
-                height={200}
-                className="w-[100%] rounded-full"
-              />
+              {data?.pagesGenerals[0].profilePicture.url ? (
+                <Image
+                  src={data.pagesGenerals[0].profilePicture.url}
+                  alt={data?.pagesGenerals[0].name}
+                  width={200}
+                  height={200}
+                  className="w-[100%] rounded-full"
+                  priority
+                />
+              ) : null}
             </div>
           </div>
           <div className="w-[100%] laptop:w-[70%] h-[80%] px-4 laptop:mt-4">
@@ -80,6 +83,7 @@ const MainPortfolio = () => {
                   key={tech.slug}
                   techIcon={tech.techIcon}
                   techName={tech.techName}
+                  techIconColor="#142530"
                 />
               ))}
             </div>
@@ -98,21 +102,44 @@ const MainPortfolio = () => {
 
             <div className="w-[100%] h-[80px] laptop:h-[40px] flex justify-start items-center flex-col laptop:flex-row gap-4 text-portfolio-color03 ">
               <div className="w-[100%] laptop:w-[40%] flex justify-center laptop:justify-start items-center flex-row gap-2">
-                <FaPhone className="text-[1] laptop:text-[1.4rem]" />
+                {data?.pagesGenerals[0].personalDatas[0].svgIconPersonalData ? (
+                  <CmsIcon
+                    icon={substitutionStrinHW(
+                      "1.5rem",
+                      "1.5rem",
+                      data?.pagesGenerals[0].personalDatas[0]
+                        .svgIconPersonalData
+                    )}
+                  />
+                ) : null}
                 <p className="text-[1rem] laptop:text-[1.4rem]">
-                  (92) 99531-9977
+                  {data?.pagesGenerals[0].personalDatas[0].description}
                 </p>
               </div>
 
               <div className="w-[100%] laptop:w-[40%] flex justify-center laptop:justify-start items-center flex-row gap-2">
-                <MdMailOutline className="text-[1] laptop:text-[1.4rem]" />
+                {data?.pagesGenerals[0].personalDatas[1].svgIconPersonalData ? (
+                  <CmsIcon
+                    icon={substitutionStrinHW(
+                      "2rem",
+                      "2rem",
+                      data?.pagesGenerals[0].personalDatas[1]
+                        .svgIconPersonalData
+                    )}
+                  />
+                ) : null}
+
                 <p className="text-[1rem] laptop:text-[1.4rem]">
-                  jander.webmaster@gmail.com
+                  {data?.pagesGenerals[0].personalDatas[1].description}
                 </p>
               </div>
             </div>
             <div className="my-10 flex justify-center items-center">
-              <SocialMediaTab />
+              {data?.pagesGenerals[0].socialMedias ? (
+                <SocialMediaTab
+                  socialMedias={data?.pagesGenerals[0].socialMedias}
+                />
+              ) : null}
             </div>
           </div>
         </div>

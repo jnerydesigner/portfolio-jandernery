@@ -1,24 +1,52 @@
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { TbBrandYoutubeFilled } from "react-icons/tb";
+import { CmsIcon } from "../services/cms-icon";
 
-export const SocialMediaTab = () => {
+type IsocialMediaType = {
+  id?: string;
+  slug?: string;
+  name?: string;
+  svgIcon?: string;
+  url?: string;
+  colorIcon?: string;
+};
+
+type SocialMedia = {
+  socialMedias: IsocialMediaType[];
+};
+
+export const SocialMediaTab = ({ socialMedias }: SocialMedia) => {
   return (
-    <div className="w-[100%] h-[50px] flex justify-center laptop:justify-start items-center flex-row text-3xl gap-6">
-      <Link href="https://www.linkedin.com/in/jander-nery" target="_blank">
-        <FaLinkedin className="text-portfolio-linkedin drop-shadow-total_opacity" />
-      </Link>
-
-      <Link href="https://github.com/jnerydesigner" target="_blank">
-        <FaGithub className="text-portfolio-github drop-shadow-total_opacity" />
-      </Link>
-
-      <Link
-        href="https://www.youtube.com/channel/UCr5fGhSnZV7eqfDYcV09XOQ"
-        target="_blank"
-      >
-        <TbBrandYoutubeFilled className="text-portfolio-youtube drop-shadow-total_opacity" />
-      </Link>
+    <div className="w-[100%] h-[50px] flex justify-center laptop:justify-start items-center flex-row text-3xl gap-6 ">
+      {socialMedias.map((socialMedia) => (
+        <Link
+          key={socialMedia.id}
+          href={socialMedia.url ? socialMedia.url : "/"}
+          target="_blank"
+          className="flex justify-center items-center"
+        >
+          {socialMedia.svgIcon ? (
+            <CmsIcon
+              icon={socialMedia.svgIcon}
+              fontColor={`${
+                socialMedia.colorIcon
+                  ? socialMedia.colorIcon
+                  : "portfolio-color03"
+              }`}
+            />
+          ) : null}
+          <p
+            className={`ml-[10px] text-[${
+              socialMedia.colorIcon
+                ? socialMedia.colorIcon
+                : "portfolio-color03"
+            }]`}
+          >
+            {socialMedia.name ? socialMedia.name : null}
+          </p>
+        </Link>
+      ))}
     </div>
   );
 };

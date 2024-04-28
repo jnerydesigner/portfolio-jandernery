@@ -1,6 +1,7 @@
 import type { RichTextContent } from "@graphcms/rich-text-types";
 
 import { GraphQLClient, gql } from "graphql-request";
+import next from "next";
 import { revalidateTag } from "next/cache";
 
 export const graphqlClient = new GraphQLClient(
@@ -10,7 +11,7 @@ export const graphqlClient = new GraphQLClient(
       "x-api-key": String(process.env.NEXT_PUBLIC_HYGRAPHQ_API_KEY),
     },
     next: {
-      tags: ["pagesGenerals"],
+      revalidate: 60 * 60,
     },
   }
 );
@@ -29,18 +30,29 @@ interface IAbouts {
   };
 }
 
-interface ISocialMedia {
+export interface ISocialMedia {
   id: string;
   slug: string;
   name: string;
   svgIcon: string;
   url: string;
+  colorIcon: string;
+}
+
+interface IPersonalData {
+  name: string;
+  svgIconPersonalData: string;
+  description: string;
 }
 
 interface IPageGenerals {
   id: string;
+  name: string;
   titleName: {
     raw: RichTextContent;
+  };
+  profilePicture: {
+    url: string;
   };
   introduction: {
     raw: RichTextContent;
@@ -48,6 +60,7 @@ interface IPageGenerals {
   abouts: IAbouts[];
   socialMedias: ISocialMedia[];
   technologies: ITechnology[];
+  personalDatas: IPersonalData[];
 }
 export interface QueryResult {
   pagesGenerals: IPageGenerals[];
@@ -62,8 +75,17 @@ export const PageHome = async (languageType?: number): Promise<QueryResult> => {
     query MyQuery {
       pagesGenerals(where: { _search: "${language}" }) {
         id
+        name
         titleName{
           raw
+        }
+        profilePicture{
+          url
+        }
+        personalDatas{
+          name
+          svgIconPersonalData
+          description
         }
         introduction{
           raw
@@ -83,6 +105,7 @@ export const PageHome = async (languageType?: number): Promise<QueryResult> => {
           name
           svgIcon
           url
+          colorIcon
         }
         technologies(first: 30) {
           id

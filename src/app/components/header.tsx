@@ -14,6 +14,7 @@ const Header = () => {
         src={"/placa.svg"}
         height={200}
         width={200}
+        priority
         alt="Flag Brazil"
         className="absolute top-0 right-[0px] laptop:right-100 z-10 w-[150px] tablet:right-[100px] tablet:w-[200px] laptop:w-[150px] laptop:right-[0px]"
       />
