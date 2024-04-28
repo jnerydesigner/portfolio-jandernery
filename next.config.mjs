@@ -9,15 +9,15 @@ const nextConfig = {
       },
     ],
   },
-  redirects: async () => {
-    return [
-      {
-        source: '/',
-        destination: '/portfolio',
-        permanent: true
-      }
-    ]
-  }
+  // redirects: async () => {
+  //   return [
+  //     {
+  //       source: '/',
+  //       destination: '/portfolio',
+  //       permanent: false
+  //     }
+  //   ]
+  // }
 };
 
 export default nextConfig;
