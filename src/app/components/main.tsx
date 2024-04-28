@@ -20,6 +20,7 @@ import { substitutionStrinHW } from "../utils/svg-height-width";
 import Section from "../_components/section.component";
 import CardProjects from "../_components/card-projects";
 import CardProjectCoponent from "../_components/card-projects.component";
+import SectionTecnologies from "../_components/section-tecnologies";
 
 const information = Information;
 
@@ -152,22 +153,16 @@ const MainPortfolio = () => {
               ))
             : null}
         </Section>
-        <section className="mt-10  h-[auto] w-[90%] flex justify-center items-center flex-col">
-          <div className="w-full h-[50] gradientTitleSection p-4 flex justify-center items-center rounded-xl">
-            <h2 className="text-[2rem]">Technologies</h2>
-          </div>
-          {data?.pagesGenerals[0].technologies ? (
-            <ProjectTechnologies
-              tecnologies={data?.pagesGenerals[0].technologies}
-            />
-          ) : null}
-        </section>
 
-        <section className="mt-10  h-[auto] w-[90%] flex justify-center items-center flex-col">
-          <div className="w-full h-[50] gradientTitleSection p-4 flex justify-center items-center rounded-xl">
-            <h2 className="text-[2rem]">Projects</h2>
+        <SectionTecnologies title="Tecnologies">
+          <div className="h-[auto] w-[90%] flex justify-center items-center flex-col">
+            {data?.pagesGenerals[0].technologies ? (
+              <ProjectTechnologies
+                tecnologies={data?.pagesGenerals[0].technologies}
+              />
+            ) : null}
           </div>
-        </section>
+        </SectionTecnologies>
       </div>
     </>
   );
