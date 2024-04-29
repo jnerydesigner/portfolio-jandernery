@@ -18,7 +18,6 @@ export const Technologies = ({
   id,
   ...rest
 }: TecnologiesProps) => {
-  console.log(id);
   return (
     <div className="bg-portfolio-color03 border rounded border-portfolio-color05 b opacity-75 px-2 py-2 drop-shadow-total_opacity text-lg font-bold flex justify-center items-center flex-row gap-2 text-portfolio-color02 mx-2 cursor-pointer shadow-lg">
       {id !== undefined ? (
