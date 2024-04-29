@@ -35,8 +35,6 @@ const CardProjectCoponent: React.FC<CardProjectProps> = ({ project }) => {
   const limitedRichText = (project: IProjectTecnologies) => {
     const desc = processarTexto(project.description.text);
 
-    console.log(project.technologies);
-
     project.textDescription = desc;
 
     setProjectInput(project);
@@ -58,7 +56,7 @@ const CardProjectCoponent: React.FC<CardProjectProps> = ({ project }) => {
 
   return (
     <>
-      <div className="card max-w-sm p-6 bg-portfolio-color05 border-[2px] border-portfolio-color03 rounded-lg shadow dark:bg-gray-800 dark:border-gray-200 flex justify-center items-center flex-col">
+      <div className="card max-w-sm p-6 bg-portfolio-color03 border-[2px] border-portfolio-color04 rounded-lg shadow dark:bg-gray-800 dark:border-gray-200 flex justify-center items-center flex-col">
         <div className="w-[80%] flex justify-center items-center rounded-xl shadow-lg mb-4">
           <Image
             src={project.imageProject.url}
