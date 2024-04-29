@@ -7,16 +7,20 @@ import { Information } from "../information";
 import { useAppContext } from "@/context/app.context";
 
 import { IoIosCloudDownload } from "react-icons/io";
-import { FaPhone } from "react-icons/fa";
-import { MdMailOutline } from "react-icons/md";
+
 import { SocialMediaTab } from "./social-medias.tab";
 import BarProjects from "../_components/bar-projects";
-import { PageHome, QueryResult } from "../services";
+import { IProjectTecnologies, PageHome, QueryResult } from "../services";
 
 import { RichText } from "../_components/rich-text";
 import { Technologies as TechComponent } from "../_components/tecnologies";
 import { ProjectTechnologies } from "./project-tecnologies";
-import { Divider } from "../_components/divider";
+import { CmsIcon } from "../services/cms-icon";
+import { substitutionStrinHW } from "../utils/svg-height-width";
+import Section from "../_components/section.component";
+import CardProjects from "../_components/card-projects";
+import CardProjectCoponent from "../_components/card-projects.component";
+import SectionTecnologies from "../_components/section-tecnologies";
 
 const information = Information;
 
@@ -31,8 +35,6 @@ const MainPortfolio = () => {
   const pageData = async (language: number) => {
     const response = await PageHome(language);
 
-    console.log(response.pagesGenerals[0].technologies[0].techIcon);
-
     setData(response);
   };
 
@@ -42,13 +44,16 @@ const MainPortfolio = () => {
         <div className="w-[100%] flex justify-center items-center flex-row">
           <div className="w-[100%] laptop:w-[25%] h-[320px] flex justify-center items-center mt-0 laptop:mt-2 p-1 mx-2">
             <div className="w-[260px] tablet:w:[260px] laptop:w:[330px] rounded-full flex justify-center items-center drop-shadow-total ">
-              <Image
-                src="/foto_jander.png"
-                alt="Jander Nery"
-                width={200}
-                height={200}
-                className="w-[100%] rounded-full"
-              />
+              {data?.pagesGenerals[0].profilePicture.url ? (
+                <Image
+                  src={data.pagesGenerals[0].profilePicture.url}
+                  alt={data?.pagesGenerals[0].name}
+                  width={200}
+                  height={200}
+                  className="w-[100%] rounded-full"
+                  priority
+                />
+              ) : null}
             </div>
           </div>
           <div className="w-[100%] laptop:w-[70%] h-[80%] px-4 laptop:mt-4">
@@ -77,9 +82,11 @@ const MainPortfolio = () => {
             <div className="grid grid-cols-10 gap-4 mt-2">
               {data?.pagesGenerals[0].technologies.map((tech) => (
                 <TechComponent
+                  id={tech.id}
                   key={tech.slug}
                   techIcon={tech.techIcon}
                   techName={tech.techName}
+                  techIconColor="#142530"
                 />
               ))}
             </div>
@@ -98,40 +105,64 @@ const MainPortfolio = () => {
 
             <div className="w-[100%] h-[80px] laptop:h-[40px] flex justify-start items-center flex-col laptop:flex-row gap-4 text-portfolio-color03 ">
               <div className="w-[100%] laptop:w-[40%] flex justify-center laptop:justify-start items-center flex-row gap-2">
-                <FaPhone className="text-[1] laptop:text-[1.4rem]" />
+                {data?.pagesGenerals[0].personalDatas[0].svgIconPersonalData ? (
+                  <CmsIcon
+                    icon={substitutionStrinHW(
+                      "1.5rem",
+                      "1.5rem",
+                      data?.pagesGenerals[0].personalDatas[0]
+                        .svgIconPersonalData
+                    )}
+                  />
+                ) : null}
                 <p className="text-[1rem] laptop:text-[1.4rem]">
-                  (92) 99531-9977
+                  {data?.pagesGenerals[0].personalDatas[0].description}
                 </p>
               </div>
 
               <div className="w-[100%] laptop:w-[40%] flex justify-center laptop:justify-start items-center flex-row gap-2">
-                <MdMailOutline className="text-[1] laptop:text-[1.4rem]" />
+                {data?.pagesGenerals[0].personalDatas[1].svgIconPersonalData ? (
+                  <CmsIcon
+                    icon={substitutionStrinHW(
+                      "2rem",
+                      "2rem",
+                      data?.pagesGenerals[0].personalDatas[1]
+                        .svgIconPersonalData
+                    )}
+                  />
+                ) : null}
+
                 <p className="text-[1rem] laptop:text-[1.4rem]">
-                  jander.webmaster@gmail.com
+                  {data?.pagesGenerals[0].personalDatas[1].description}
                 </p>
               </div>
             </div>
             <div className="my-10 flex justify-center items-center">
-              <SocialMediaTab />
+              {data?.pagesGenerals[0].socialMedias ? (
+                <SocialMediaTab
+                  socialMedias={data?.pagesGenerals[0].socialMedias}
+                />
+              ) : null}
             </div>
           </div>
         </div>
-        <section className="mt-10  h-[auto] w-[90%] flex justify-center items-center flex-col">
-          <div className="w-full h-[50] gradientTitleSection p-4 flex justify-center items-center rounded-xl">
-            <h2 className="text-[2rem]">Technologies</h2>
-          </div>
-          {data?.pagesGenerals[0].technologies ? (
-            <ProjectTechnologies
-              tecnologies={data?.pagesGenerals[0].technologies}
-            />
-          ) : null}
-        </section>
+        <Section title="Projects">
+          {data?.pagesGenerals[0].projectTecnologies
+            ? data?.pagesGenerals[0].projectTecnologies.map((project) => (
+                <CardProjectCoponent key={project.id} project={project} />
+              ))
+            : null}
+        </Section>
 
-        <section className="mt-10  h-[auto] w-[90%] flex justify-center items-center flex-col">
-          <div className="w-full h-[50] gradientTitleSection p-4 flex justify-center items-center rounded-xl">
-            <h2 className="text-[2rem]">Projects</h2>
+        <SectionTecnologies title="Tecnologies">
+          <div className="h-[auto] w-[90%] flex justify-center items-center flex-col">
+            {data?.pagesGenerals[0].technologies ? (
+              <ProjectTechnologies
+                tecnologies={data?.pagesGenerals[0].technologies}
+              />
+            ) : null}
           </div>
-        </section>
+        </SectionTecnologies>
       </div>
     </>
   );

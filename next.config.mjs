@@ -1,14 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  redirects: async () => {
-    return [
+  images: {
+    remotePatterns: [
       {
-        source: '/',
-        destination: '/portfolio',
-        permanent: true
-      }
-    ]
-  }
+        protocol: 'https',
+        hostname: 'media.graphassets.com',
+        pathname: '**',
+      },
+    ],
+  },
+  // redirects: async () => {
+  //   return [
+  //     {
+  //       source: '/',
+  //       destination: '/portfolio',
+  //       permanent: false
+  //     }
+  //   ]
+  // }
 };
 
 export default nextConfig;

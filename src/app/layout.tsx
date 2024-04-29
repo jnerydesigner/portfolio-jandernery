@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "../styles/globals.css";
+import "./styles/globals.css";
+import { WrapperClient } from "./components/wrapper-client";
+import "react-tooltip/dist/react-tooltip.css";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -19,9 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className="!scroll-smooth">
-      <body className={roboto.className}>
+      <body className={(roboto.className, "bg-portfolio-color02")}>
         <header className="w-[100%] h-[auto] laptop:h-[auto] grid grid-cols-1 bg-portfolio-color02">
-          {children}
+          <WrapperClient>{children}</WrapperClient>
         </header>
       </body>
     </html>
