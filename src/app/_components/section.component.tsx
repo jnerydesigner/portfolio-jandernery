@@ -16,7 +16,9 @@ const SectionComponent: React.FC<SectionComponentProps> = ({
           {title}
         </h2>
       </div>
-      <div className="grid grid-cols-3 gap-4">{children}</div>
+      <div className="grid grid-cols-1 tablet:grid-cols-3 desktop:grid-cols-3 gap-4">
+        {children}
+      </div>
     </section>
   );
 };

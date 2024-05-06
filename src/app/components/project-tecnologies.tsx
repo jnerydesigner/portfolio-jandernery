@@ -13,16 +13,13 @@ export const ProjectTechnologies = ({
   tecnologies,
 }: IProjectTechnologiesProps) => {
   return (
-    <div className="mt-10  h-[auto] w-[90%] p-2 grid grid-cols-6 gap-4">
+    <div className="mt-10  h-[auto] w-[90%] p-2 grid grid-cols-2 tablet:grid-cols-4 desktop:grid-cols-6 gap-4">
       {tecnologies.map((tech) => (
         <div
           key={tech.slug}
           className="h-[200px] border-[2px] border-portfolio-color04 p-4 rounded-2xl flex justify-center items-center flex-col bg-portfolio-color03"
         >
-          <CmsIcon
-            icon={substitutionStrinHW("4em", "4em", tech.techIcon)}
-            style="mb-4"
-          />
+          <CmsIcon icon={substitutionStrinHW("4em", "4em", tech.techIcon)} />
           <p>{tech.techName}</p>
           <p className="text-center">{calculateElapsedTime(tech.startDate)}</p>
         </div>
