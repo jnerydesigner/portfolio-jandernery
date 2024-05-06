@@ -1,23 +1,20 @@
 interface IHygraphIcon {
   icon: string;
-  style?: string;
+  style?: React.CSSProperties;
   fontColor?: string;
+  [key: string]: any;
 }
 
-export const CmsIcon = ({ icon, style, fontColor }: IHygraphIcon) => {
-  if (fontColor !== undefined) {
-    return (
-      <div
-        dangerouslySetInnerHTML={{
-          __html: icon,
-        }}
-        className={`text-[${fontColor}] drop-shadow-total_opacity`}
-      />
-    );
-  }
-
+export const CmsIcon = ({
+  icon,
+  style,
+  fontColor,
+  ...restProps
+}: IHygraphIcon) => {
   return (
     <div
+      style={style}
+      {...restProps}
       dangerouslySetInnerHTML={{
         __html: icon,
       }}
