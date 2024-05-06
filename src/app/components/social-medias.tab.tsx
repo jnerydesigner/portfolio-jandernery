@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { TbBrandYoutubeFilled } from "react-icons/tb";
 import { CmsIcon } from "../services/cms-icon";
 
 type IsocialMediaType = {
@@ -18,7 +16,7 @@ type SocialMedia = {
 
 export const SocialMediaTab = ({ socialMedias }: SocialMedia) => {
   return (
-    <div className="w-[100%] h-[50px] flex justify-center laptop:justify-start items-center flex-row text-3xl gap-6 ">
+    <div className="w-[100%] h-[auto] flex justify-center laptop:justify-start items-center flex-row desktop:flex-col text-3xl gap-6 desktop:gap-1 ">
       {socialMedias.map((socialMedia) => (
         <Link
           key={socialMedia.id}
@@ -29,20 +27,13 @@ export const SocialMediaTab = ({ socialMedias }: SocialMedia) => {
           {socialMedia.svgIcon ? (
             <CmsIcon
               icon={socialMedia.svgIcon}
-              fontColor={`${
-                socialMedia.colorIcon
-                  ? socialMedia.colorIcon
-                  : "portfolio-color03"
-              }`}
+              style={{
+                color: `${socialMedia.colorIcon}`,
+                fontSize: "1.4rem",
+              }}
             />
           ) : null}
-          <p
-            className={`ml-[10px] text-[${
-              socialMedia.colorIcon
-                ? socialMedia.colorIcon
-                : "portfolio-color03"
-            }]`}
-          >
+          <p style={{ color: `${socialMedia.colorIcon}`, fontSize: "1.4rem" }}>
             {socialMedia.name ? socialMedia.name : null}
           </p>
         </Link>

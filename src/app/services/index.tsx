@@ -59,7 +59,7 @@ export interface IProjectTecnologies {
   technologies: ITechnology[];
 }
 
-interface IPageGenerals {
+export interface IPageGenerals {
   id: string;
   name: string;
   titleName: {

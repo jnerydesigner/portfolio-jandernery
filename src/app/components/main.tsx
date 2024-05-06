@@ -21,6 +21,7 @@ import Section from "../_components/section.component";
 import CardProjects from "../_components/card-projects";
 import CardProjectCoponent from "../_components/card-projects.component";
 import SectionTecnologies from "../_components/section-tecnologies";
+import PictureView from "../_components/picture-view";
 
 const information = Information;
 
@@ -41,17 +42,16 @@ const MainPortfolio = () => {
   return (
     <>
       <div className="w-[100%] tablet:w-[90%] laptop:w-[80%] h-[100%] tablet:h-[80%] laptop:h-[auto] flex justify-center items-center flex-col laptop:flex-col mt-[30px] tablet:mt-8 laptop:mt-8 mb-8 bg-portfolio-color02 mx-auto">
-        <div className="w-[100%] flex justify-center items-center flex-row">
-          <div className="w-[100%] laptop:w-[25%] h-[320px] flex justify-center items-center mt-0 laptop:mt-2 p-1 mx-2">
-            <div className="w-[260px] tablet:w:[260px] laptop:w:[330px] rounded-full flex justify-center items-center drop-shadow-total ">
-              {data?.pagesGenerals[0].profilePicture.url ? (
-                <Image
-                  src={data.pagesGenerals[0].profilePicture.url}
-                  alt={data?.pagesGenerals[0].name}
-                  width={200}
-                  height={200}
-                  className="w-[100%] rounded-full"
-                  priority
+        <div className="w-[100%] flex justify-center items-center flex-col desktop:flex-row">
+          <div className="w-[100%] laptop:w-[25%] h-[100%] flex justify-between items-center flex-col mt-0 laptop:mt-2 p-1 mx-2 ">
+            {data?.pagesGenerals[0].profilePicture.url ? (
+              <PictureView pagesGenerals={data?.pagesGenerals[0]} />
+            ) : null}
+
+            <div className="w-[90%] bg-portfolio-color03 mt-4 flex justify-center items-center flex-col p-2 rounded-xl">
+              {data?.pagesGenerals[0].socialMedias ? (
+                <SocialMediaTab
+                  socialMedias={data?.pagesGenerals[0].socialMedias}
                 />
               ) : null}
             </div>
@@ -79,7 +79,7 @@ const MainPortfolio = () => {
               ) : null}
             </div>
 
-            <div className="grid grid-cols-10 gap-4 mt-2">
+            <div className="grid grid-cols-4 tablet:col-8 desktop:col-10 gap-4 mt-2">
               {data?.pagesGenerals[0].technologies.map((tech) => (
                 <TechComponent
                   id={tech.id}
@@ -136,13 +136,6 @@ const MainPortfolio = () => {
                   {data?.pagesGenerals[0].personalDatas[1].description}
                 </p>
               </div>
-            </div>
-            <div className="my-10 flex justify-center items-center">
-              {data?.pagesGenerals[0].socialMedias ? (
-                <SocialMediaTab
-                  socialMedias={data?.pagesGenerals[0].socialMedias}
-                />
-              ) : null}
             </div>
           </div>
         </div>
