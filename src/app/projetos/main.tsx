@@ -69,9 +69,9 @@ const MainProjects = () => {
   }, [pageGenerals, language]);
 
   return (
-    <div className="h-[auto] w-[80%] bg-portfolio-color04 flex justify-center flex-col items-center mb-20 mt-[500px]">
+    <div className="h-[auto] w-[80%] flex justify-center flex-col items-center mb-20 mt-[30px] desktop:mt-[530px]">
       <BarProjects />
-      <div className="w-[90%] h-[90%] grid grid-cols-1 desktop:grid-cols-3 gap-0 bg-portfolio-color03">
+      <div className="w-[80%] h-[90%] grid grid-cols-1 desktop:grid-cols-3 gap-4">
         {dataCompanyWorked.map((projectWorked) => (
           <CardProjects
             key={projectWorked.projectWorkedId}
