@@ -27,7 +27,7 @@ const information = Information;
 
 const MainPortfolio = () => {
   const [data, setData] = useState<QueryResult>();
-  const { language } = useAppContext();
+  const { language, pageGenerals } = useAppContext();
 
   useEffect(() => {
     pageData(language);
