@@ -41,7 +41,7 @@ const CardProjects = ({
         {`${nameCompany}`}
       </h1>
 
-      <div className="flex justify-center items-center w-[70%] h-[200px] bg-portfolio-color04 rounded-lg border-[3px] border-portfolio-color03 shadow-lg my-2">
+      <div className="flex justify-center items-center w-[200px] h-[200px] bg-portfolio-color04 rounded-full border-[3px] border-portfolio-color03 shadow-lg my-2">
         <h2 className="text-[5rem]">{letter}</h2>
       </div>
       <h1 className="text-center text-portfolio-color04 text-[1.6rem] font-bold">
