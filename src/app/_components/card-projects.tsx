@@ -24,15 +24,15 @@ const CardProjects = ({
   const letter = GetMostFrequentLetters(nameProject);
 
   return (
-    <div className="h-[auto] w-[100%] desktop:w-[350px] flex justify-center items-center flex-col p-2 border border-portfolio-color03 rounded-xl">
-      <div className="w-[100%] mb-2 flex justify-center items-center bg-portfolio-color04 h-[100px] rounded-xl border border-portfolio-color05 relative">
-        <div className="p-2 bg-portfolio-color04 flex justify-center items-center">
+    <div className="h-[auto] w-[90%] desktop:w-[100%] flex justify-center items-center flex-col p-2 border border-portfolio-color03 rounded-xl">
+      <div className="w-[100%] mb-2 flex justify-center items-center h-[100px] rounded-xl relative">
+        <div className="p-2 w-[100%] h-[100%] flex justify-center items-center bg-portfolio-color04 rounded-xl border-[2px] border-portfolio-color05">
           <Image
             src={imageUrlCompany}
             alt={nameProject}
             width={200}
             height={200}
-            className="w-[60%] mb-2"
+            className="w-[50%] mb-2"
             priority
           />
         </div>
