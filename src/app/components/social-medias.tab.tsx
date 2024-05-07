@@ -16,7 +16,7 @@ type SocialMedia = {
 
 export const SocialMediaTab = ({ socialMedias }: SocialMedia) => {
   return (
-    <div className="w-[100%] h-[auto] flex justify-center laptop:justify-start items-center flex-row desktop:flex-col text-3xl gap-6 desktop:gap-1 ">
+    <div className="w-[100%] h-[auto] flex justify-center  items-center flex-row  text-3xl gap-6 desktop:gap-6 ">
       {socialMedias.map((socialMedia) => (
         <Link
           key={socialMedia.id}
@@ -33,9 +33,6 @@ export const SocialMediaTab = ({ socialMedias }: SocialMedia) => {
               }}
             />
           ) : null}
-          <p style={{ color: `${socialMedia.colorIcon}`, fontSize: "1.4rem" }}>
-            {socialMedia.name ? socialMedia.name : null}
-          </p>
         </Link>
       ))}
     </div>

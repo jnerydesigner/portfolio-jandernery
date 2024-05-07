@@ -2,13 +2,10 @@
 import { motion } from "framer-motion";
 
 import { useAppContext } from "@/context/app.context";
-import { Information } from "../information";
-import { IoIosSend } from "react-icons/io";
 import FormContact from "../_components/form-contact";
 
 const MainContact = () => {
-  const { language } = useAppContext();
-  const information = Information;
+  const { pageGenerals: data } = useAppContext();
   return (
     <div className="h-[90vh] w-[100%] laptop:w-[80%] flex justify-center flex-col items-center p-1 laptop:p-10">
       <div className="h-[70vh] w-[100%] laptop:w-[80%] flex justify-center flex-col items-center p-1 laptop:p-10  ">
@@ -18,7 +15,7 @@ const MainContact = () => {
           transition={{ ease: "easeInOut", duration: 0.5 }}
           className="text-4xl mb-10 text-center text-portfolio-color03 font-bold"
         >
-          {information?.[language]?.contact.title}
+          {data?.pagesGenerals[0].contact.title}
         </motion.h2>
 
         <motion.div

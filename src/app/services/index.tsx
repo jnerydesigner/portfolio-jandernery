@@ -65,6 +65,18 @@ export interface IPageGenerals {
   titleName: {
     raw: RichTextContent;
   };
+  contact: {
+    title: string;
+    formLabelName: string;
+    formInputNamePlaceholder: string;
+    formLabelPhone: string;
+    formInputPhonePlaceholder: string;
+    formLabelMail: string;
+    formInputMailPlaceholder: string;
+    formLabelMessenger: string;
+    formInputMessengerPlaceholder: string;
+    labelBtn: string;
+  };
   profilePicture: {
     url: string;
   };
@@ -76,7 +88,42 @@ export interface IPageGenerals {
   socialMedias: ISocialMedia[];
   technologies: ITechnology[];
   personalDatas: IPersonalData[];
+  companyWorkeds: ICompanyWorked[];
 }
+
+export interface ICompanyWorked {
+  id: string;
+  company: string;
+  urlSite: string;
+  urlLinkedinPage: string;
+  slug: string;
+  workedInit: string;
+  workedEnd: string;
+  imageCompany: {
+    url: string;
+  };
+  projectWorkeds: IProjectWorked[];
+}
+
+export interface ICompanyWorkedFather {
+  id: string;
+  company: string;
+  imageCompany: {
+    url: string;
+  };
+}
+
+export interface IProjectWorked {
+  id: string;
+  name: string;
+  companyWorked: ICompanyWorked;
+  description: {
+    raw: RichTextContent;
+    text: string;
+  };
+  technologies: ITechnology[];
+}
+
 export interface QueryResult {
   pagesGenerals: IPageGenerals[];
 }
@@ -93,6 +140,18 @@ export const PageHome = async (languageType?: number): Promise<QueryResult> => {
         name
         titleName{
           raw
+        }
+        contact{
+          title
+          formLabelName
+          formInputNamePlaceholder
+          formLabelPhone
+          formInputPhonePlaceholder
+          formLabelMail
+          formInputMailPlaceholder
+          formLabelMessenger
+          formInputMessengerPlaceholder
+          labelBtn
         }
         profilePicture{
           url
@@ -147,6 +206,42 @@ export const PageHome = async (languageType?: number): Promise<QueryResult> => {
           startDate
           slug
           techIcon
+        }
+        companyWorkeds{
+          id
+          company
+          urlSite
+          urlLinkedinPage
+          slug
+          workedInit
+          workedEnd
+          imageCompany{
+            url
+          }
+          projectWorkeds{
+            id
+            name
+            description{
+              raw
+              text
+            }
+            companyWorked{
+              id
+              company
+              urlSite
+              workedInit
+              workedEnd
+              imageCompany{
+                url
+              }
+            
+            }
+            technologies{
+              id
+              techName
+              techIcon
+            }
+          }
         }
       }
     }
