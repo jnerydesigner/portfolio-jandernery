@@ -4,6 +4,7 @@ import Tech from "./tech";
 import { TbBrandNodejs } from "react-icons/tb";
 import { ICompanyWorked, ITechnology } from "../services";
 import { GetMostFrequentLetters } from "../utils/create-two-letters-plus-quantity";
+import Link from "next/link";
 
 interface CardProjectsProps {
   nameProject: string;
@@ -20,6 +21,7 @@ const CardProjects = ({
   tecnologies,
   companyWorked,
   nameCompany,
+  projectId,
 }: CardProjectsProps) => {
   const letter = GetMostFrequentLetters(nameProject);
 
@@ -45,7 +47,7 @@ const CardProjects = ({
         <h2 className="text-[5rem]">{letter}</h2>
       </div>
       <h1 className="text-center text-portfolio-color04 text-[1.2rem] font-bold">
-        {nameProject}
+        <Link href={`/project/${projectId}`}>{nameProject}</Link>
       </h1>
       {/* <RichText key={projectId} content={description.raw} /> */}
       <div className="grid grid-cols-3 gap-4">

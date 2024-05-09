@@ -1,8 +1,6 @@
 import type { RichTextContent } from "@graphcms/rich-text-types";
 
 import { GraphQLClient, gql } from "graphql-request";
-import next from "next";
-import { revalidateTag } from "next/cache";
 
 export const graphqlClient = new GraphQLClient(
   String(process.env.NEXT_PUBLIC_HYGRAPHQ_URL),
