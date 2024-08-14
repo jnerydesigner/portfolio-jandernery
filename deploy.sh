@@ -8,3 +8,5 @@ yarn install --frozen-lockfile
 yarn build
 
 pm2 restart portfolio-jandernery 
+
+echo "Deployment Completed"
