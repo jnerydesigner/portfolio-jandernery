@@ -15,7 +15,7 @@
     "@graphcms/rich-text-react-renderer": "^0.6.1",
     "@hookform/resolvers": "^3.3.4",
     "apollo-server-micro": "^3.13.0",
-    "axios": "^1.6.8",
+    "axios": "^1.8.4",
     "core-js": "^3.37.0",
     "framer-motion": "^11.1.7",
     "graphql": "^16.8.1",
