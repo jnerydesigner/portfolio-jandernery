@@ -3,8 +3,6 @@ set -e # Faz o script parar no primeiro erro
 
 echo "🚀 Iniciando deploy..."
 
-sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/PortfolioJandernery
-
 # Instala dependências
 npm ci
 
