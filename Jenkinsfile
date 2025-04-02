@@ -12,6 +12,13 @@ pipeline {
                 }
             }
         }
+        stage("Instalando o Yarn"){
+            steps {
+                script {
+                    sh 'npm -g install yarn'
+                }
+            }
+        }
         stage("Deploy Se Liga Dev"){
             steps {
                 script {
