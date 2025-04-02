@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        nodejs 'NodeJS20' // Nome que você configurou no Jenkins
+        nodejs 'NodeJS_22'
     }
     stages {
         stage('Check Node Version') {
