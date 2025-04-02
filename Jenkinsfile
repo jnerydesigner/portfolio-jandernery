@@ -12,6 +12,13 @@ pipeline {
                 }
             }
         }
+        stage("Configurando Permissões"){
+            steps {
+                script {
+                    sh 'sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/PortfolioJandernery'
+                }
+            }
+        }
         stage("Deploy Se Liga Dev"){
             steps {
                 script {
