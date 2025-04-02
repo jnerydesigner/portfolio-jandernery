@@ -92,7 +92,7 @@ const MainPortfolio = () => {
             </div>
 
             <a
-              href="/01_curriculo_jander_da_costa_nery_v2_fevereiro_2025.pdf"
+              href="/01_Curriculo_Jander_Da_Costa_Nery_v7_Marco_2025.pdf"
               target="_blank"
               download="Curriculo Jander Nery"
               className="w-[100%] laptop:w-[300px] h-[50px] my-6 bg-portfolio-color03 rounded-full flex justify-center items-center flex-row text-portfolio-color01 bold shadow-xl border-[1px] border-portfolio-color05 gap-4"
