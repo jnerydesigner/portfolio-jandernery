@@ -3,7 +3,9 @@
         {
             "name": "portfolio-jandernery",
             "script": "yarn",
-            "args" : "start"
+            "args": "start",
+            "autorestart": true,
+            "watch": true
         }
     ]
 }
