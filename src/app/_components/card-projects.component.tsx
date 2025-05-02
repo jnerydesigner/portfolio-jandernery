@@ -5,7 +5,6 @@ import { RichTextContent } from "@graphcms/rich-text-types";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import Image from "next/image";
 import { ITechnology } from "../services";
-import TechDesc from "./tech-desc";
 
 interface IProjectTecnologies {
   id: string;
@@ -28,17 +27,16 @@ interface CardProjectProps {
 
 const CardProjectCoponent: React.FC<CardProjectProps> = ({ project }) => {
   const [projectInput, setProjectInput] = useState<IProjectTecnologies>();
+
   useEffect(() => {
+    const limitedRichText = (project: IProjectTecnologies) => {
+      const desc = processarTexto(project.description.text);
+      project.textDescription = desc;
+      setProjectInput(project);
+    };
+
     limitedRichText(project);
-  }, [project]);
-
-  const limitedRichText = (project: IProjectTecnologies) => {
-    const desc = processarTexto(project.description.text);
-
-    project.textDescription = desc;
-
-    setProjectInput(project);
-  };
+  }, [project, setProjectInput]);
 
   function processarTexto(texto: string) {
     let textoFinal: string = "";
@@ -99,9 +97,9 @@ const CardProjectCoponent: React.FC<CardProjectProps> = ({ project }) => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
