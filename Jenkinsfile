@@ -12,6 +12,13 @@ pipeline {
                 }
             }
         }
+        stage("Verificar Instalações") {
+            steps {
+                sh 'which node'
+                sh 'which yarn'
+                sh 'which pm2'
+            }
+        }
         stage("Configurando Permissões"){
             steps {
                 script {
