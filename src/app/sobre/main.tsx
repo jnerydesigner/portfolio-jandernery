@@ -8,7 +8,7 @@ import { RichText } from "../_components/rich-text";
 const MainAbout = () => {
   const { pageGenerals: data } = useAppContext();
   return (
-    <div className="w-[100%] tablet:h-[85vh] laptop:h-[90vh] laptop:w-[80%] flex justify-center flex-col items-center p-2 laptop:p-10">
+    <div className="w-[100%] tablet:h-[85vh] laptop:h-[auto] laptop:w-[100%] flex justify-center flex-col items-center p-2 laptop:p-10">
       <div className="h-[auto] w-[100%] laptop:w-[100%] flex justify-center flex-col items-center p-1 laptop:p-10 ">
         <motion.h2
           initial={{ y: 200 }}

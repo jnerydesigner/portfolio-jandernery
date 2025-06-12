@@ -39,7 +39,7 @@ pipeline {
                                 yarn build
 
                                 pm2 update ${env.PROJECT_NAME} || true
-                                pm2 start my-pm2-start.json --update-env || pm2 restart my-pm2-start.json
+                                pm2 start ecosystem.config.js --only ${env.PROJECT_NAME} --update-env || pm2 restart ${env.PROJECT_NAME}
                             '
                         """
                     }

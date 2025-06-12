@@ -13,7 +13,7 @@ export const ProjectTechnologies = ({
   tecnologies,
 }: IProjectTechnologiesProps) => {
   return (
-    <div className="mt-10  h-[auto] w-[90%] p-2 grid grid-cols-2 tablet:grid-cols-4 desktop:grid-cols-6 gap-4">
+    <div className="mt-10  h-[auto] w-[112%] p-2 grid grid-cols-2 tablet:grid-cols-4 desktop:grid-cols-6 gap-4">
       {tecnologies.map((tech) => (
         <div
           key={tech.slug}
