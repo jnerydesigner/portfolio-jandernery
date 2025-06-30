@@ -1,4 +1,4 @@
-export function calculateElapsedTime(dateStr: string) {
+export function calculateElapsedTime(dateStr: string, language: string) {
   const dateNow = new Date();
 
   try {
@@ -10,12 +10,20 @@ export function calculateElapsedTime(dateStr: string) {
 
     const fullYears = Math.floor(yearscomplete);
 
-    const monthYearStr = dateProvided.toLocaleDateString("pt-BR", {
+    let monthYearStr = dateProvided.toLocaleDateString("en-US", {
       month: "long",
       year: "numeric",
     });
 
-    const result = `${fullYears} anos Desde ${monthYearStr}`;
+    let result = `${fullYears} years since ${monthYearStr}`;
+
+    if (language === "porfolio-pt") {
+      monthYearStr = dateProvided.toLocaleDateString("pt-BR", {
+        month: "long",
+        year: "numeric",
+      });
+      result = `${fullYears} anos Desde ${monthYearStr}`;
+    }
 
     return result;
   } catch (error) {

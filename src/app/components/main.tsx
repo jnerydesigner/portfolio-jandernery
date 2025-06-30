@@ -22,12 +22,16 @@ import CardProjects from "../_components/card-projects";
 import CardProjectCoponent from "../_components/card-projects.component";
 import SectionTecnologies from "../_components/section-tecnologies";
 import PictureView from "../_components/picture-view";
+import { DownloadCurriculo } from "../_components/download-curriculo";
+import Link from "next/link";
+import { TransformNumberPhoneInInternational } from "../utils/transform-number-tel-format-international";
+import SectionCompanies from "../_components/section-companies";
 
 const information = Information;
 
 const MainPortfolio = () => {
   const [data, setData] = useState<QueryResult>();
-  const { language, pageGenerals } = useAppContext();
+  const { language, pageGenerals, languageSection } = useAppContext();
 
   useEffect(() => {
     pageData(language);
@@ -72,13 +76,11 @@ const MainPortfolio = () => {
                 ) : null}
               </div>
             </div>
-
             <div>
               {data?.pagesGenerals[0].introduction.raw ? (
                 <RichText content={data?.pagesGenerals[0].introduction.raw} />
               ) : null}
             </div>
-
             <div className="grid grid-cols-4 tablet:col-8 desktop:col-10 gap-4 mt-2">
               {data?.pagesGenerals[0].technologies.map((tech) => (
                 <TechComponent
@@ -86,38 +88,45 @@ const MainPortfolio = () => {
                   key={tech.slug}
                   techIcon={tech.techIcon}
                   techName={tech.techName}
-                  techIconColor="#142530"
+                  techIconColor="#2c3e50"
                 />
               ))}
             </div>
 
-            <a
-              href="/curriculo_jander_nery.pdf"
-              target="_blank"
-              download="Curriculo Jander Nery"
-              className="w-[100%] laptop:w-[300px] h-[50px] my-6 bg-portfolio-color03 rounded-full flex justify-center items-center flex-row text-portfolio-color01 bold shadow-xl border-[1px] border-portfolio-color05 gap-4"
-            >
-              <span className="font-bold">
-                {information?.[language]?.btn.dowloadCurriculo.title}
-              </span>
-              <IoIosCloudDownload className="text-[1.6rem]" />
-            </a>
+            <div className="w-full flex justify-center items-center">
+              <DownloadCurriculo
+                title={information?.[language]?.btn.downloadCurriculo.title}
+              />
+            </div>
+            {/* https://wa.me/<número></número> */}
 
             <div className="w-[100%] h-[80px] laptop:h-[40px] flex justify-start items-center flex-col laptop:flex-row gap-4 text-portfolio-color03 ">
               <div className="w-[100%] laptop:w-[40%] flex justify-center laptop:justify-start items-center flex-row gap-2">
-                {data?.pagesGenerals[0].personalDatas[0].svgIconPersonalData ? (
-                  <CmsIcon
-                    icon={substitutionStrinHW(
-                      "1.5rem",
-                      "1.5rem",
-                      data?.pagesGenerals[0].personalDatas[0]
-                        .svgIconPersonalData
-                    )}
-                  />
-                ) : null}
-                <p className="text-[1rem] laptop:text-[1.4rem]">
-                  {data?.pagesGenerals[0].personalDatas[0].description}
-                </p>
+                <Link
+                  href={`https://wa.me/${
+                    data?.pagesGenerals[0].personalDatas[0].description &&
+                    TransformNumberPhoneInInternational(
+                      data?.pagesGenerals[0].personalDatas[0].description
+                    )
+                  }`}
+                  className="w-full flex justify-center items-center gap-4"
+                  target="_blank"
+                >
+                  {data?.pagesGenerals[0].personalDatas[0]
+                    .svgIconPersonalData ? (
+                    <CmsIcon
+                      icon={substitutionStrinHW(
+                        "1.5rem",
+                        "1.5rem",
+                        data?.pagesGenerals[0].personalDatas[0]
+                          .svgIconPersonalData
+                      )}
+                    />
+                  ) : null}
+                  <p className="text-[1rem] laptop:text-[1.4rem]">
+                    {data?.pagesGenerals[0].personalDatas[0].description}
+                  </p>
+                </Link>
               </div>
 
               <div className="w-[100%] laptop:w-[40%] flex justify-center laptop:justify-start items-center flex-row gap-2">
@@ -139,19 +148,25 @@ const MainPortfolio = () => {
             </div>
           </div>
         </div>
-        <Section title="Projects">
+        {/* <Section title="Projects">
           {data?.pagesGenerals[0].projectTecnologies
             ? data?.pagesGenerals[0].projectTecnologies.map((project) => (
                 <CardProjectCoponent key={project.id} project={project} />
               ))
             : null}
-        </Section>
+        </Section> */}
 
-        <SectionTecnologies title="Tecnologies">
+        <SectionCompanies
+          title={languageSection.company}
+          companies={data?.pagesGenerals?.[0]?.companyWorkeds || []}
+        />
+
+        <SectionTecnologies title={languageSection.technology}>
           <div className="h-[auto] w-[90%] flex justify-center items-center flex-col">
             {data?.pagesGenerals[0].technologies ? (
               <ProjectTechnologies
                 tecnologies={data?.pagesGenerals[0].technologies}
+                languageSection={languageSection.language}
               />
             ) : null}
           </div>

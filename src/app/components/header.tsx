@@ -36,11 +36,11 @@ const Header = () => {
                 {information?.[language]?.titleNavigation[2].title}
               </Link>
             </li>
-            <li className="w-full h-10 flex justify-center items-center">
+            {/* <li className="w-full h-10 flex justify-center items-center">
               <Link href="/projetos">
                 {information?.[language]?.titleNavigation[3].title}
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="w-[100%] tablet:w-[20%] laptop:w-[20%] h-[60px] tablet:h-[10vh]  flex justify-center items-center flex-row ">

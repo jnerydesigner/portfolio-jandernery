@@ -99,7 +99,7 @@ export const Information: InformationType[] = [
       },
     },
     btn: {
-      dowloadCurriculo: {
+      downloadCurriculo: {
         title: "Baixar Curriculo",
       },
     },
@@ -179,7 +179,7 @@ export const Information: InformationType[] = [
       },
     },
     btn: {
-      dowloadCurriculo: {
+      downloadCurriculo: {
         title: "Download Curriculo",
       },
     },
@@ -254,7 +254,7 @@ type ContactType = {
 };
 
 type BtnNamesType = {
-  dowloadCurriculo: {
+  downloadCurriculo: {
     title: string;
   };
 };

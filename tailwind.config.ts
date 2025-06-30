@@ -17,6 +17,7 @@ const config: Config = {
         linkedin: "#0A66C2",
         github: "#010409",
         youtube: "#FF0000",
+        white_port: "#FFF",
       },
     },
     screens: {

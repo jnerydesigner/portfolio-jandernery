@@ -7,10 +7,12 @@ const svgIcon = `<svg stroke="currentColor" fill="currentColor" strokeWidth="0" 
 
 interface IProjectTechnologiesProps {
   tecnologies: ITechnology[];
+  languageSection: string;
 }
 
 export const ProjectTechnologies = ({
   tecnologies,
+  languageSection,
 }: IProjectTechnologiesProps) => {
   return (
     <div className="mt-10  h-[auto] w-[112%] p-2 grid grid-cols-2 tablet:grid-cols-4 desktop:grid-cols-6 gap-4">
@@ -21,7 +23,9 @@ export const ProjectTechnologies = ({
         >
           <CmsIcon icon={substitutionStrinHW("4em", "4em", tech.techIcon)} />
           <p>{tech.techName}</p>
-          <p className="text-center">{calculateElapsedTime(tech.startDate)}</p>
+          <p className="text-center">
+            {calculateElapsedTime(tech.startDate, languageSection)}
+          </p>
         </div>
       ))}
     </div>
