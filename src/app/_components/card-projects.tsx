@@ -42,7 +42,7 @@ const CardProjects = ({
       </h1>
 
       <div className="flex justify-center items-center w-[200px] h-[200px] bg-portfolio-color04 rounded-full border-[3px] border-portfolio-color03 shadow-lg my-2">
-        <h2 className="text-[5rem]">{letter}</h2>
+        <h2 className="text-[5rem]">{letter} 1</h2>
       </div>
       <h1 className="text-center text-portfolio-color04 text-[1.2rem] font-bold">
         {nameProject}
