@@ -15,7 +15,7 @@ export function calculateElapsedTimeParts(dateStr: string, language: string) {
   const diffMs = now.getTime() - provided.getTime();
   const years = Math.floor(diffMs / (1000 * 60 * 60 * 24 * 365));
 
-  const locale = language === "portfolio-pt" ? "pt-BR" : "en-US";
+  const locale = language === "porfolio-pt" ? "pt-BR" : "en-US";
 
   const month = provided.toLocaleDateString(locale, {
     month: "long",
@@ -24,9 +24,7 @@ export function calculateElapsedTimeParts(dateStr: string, language: string) {
   const year = provided.getFullYear();
 
   const labelYears =
-    language === "portfolio-pt"
-      ? `${years} anos desde`
-      : `${years} years since`;
+    language === "porfolio-pt" ? `${years} anos desde` : `${years} years since`;
 
   return {
     years,
