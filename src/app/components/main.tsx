@@ -39,6 +39,7 @@ const MainPortfolio = () => {
 
   const pageData = async (language: number) => {
     const response = await PageHome(language);
+    console.log(response);
 
     setData(response);
   };

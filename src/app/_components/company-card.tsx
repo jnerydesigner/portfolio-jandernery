@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaGlobe } from "react-icons/fa";
+import { transformDateBR } from "../utils/transform-date";
 
 interface CompanyCardProps {
   companyName: string;
@@ -35,7 +36,7 @@ export const CompanyCard = ({
         </div>
         <h2 className="text-xl font-bold text-gray-800 mt-2">{companyName}</h2>
         <p className="text-sm text-gray-500">
-          {startDate} — {endDate}
+          {transformDateBR(startDate)} — {transformDateBR(endDate)}
         </p>
       </div>
 
