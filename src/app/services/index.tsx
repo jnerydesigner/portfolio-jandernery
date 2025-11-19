@@ -89,6 +89,7 @@ export interface IPageGenerals {
   technologies: ITechnology[];
   personalDatas: IPersonalData[];
   companyWorkeds: ICompanyWorked[];
+  workedProjects: WorkedProjects[];
 }
 
 export interface ICompanyWorked {
@@ -122,6 +123,18 @@ export interface IProjectWorked {
     text: string;
   };
   technologies: ITechnology[];
+}
+
+export interface WorkedProjects {
+  id: string;
+  slug: string;
+  title: string;
+  content: {
+    name: string;
+    image: string;
+    github: string;
+    description: string;
+  };
 }
 
 export interface QueryResult {
@@ -242,6 +255,12 @@ export const PageHome = async (languageType?: number): Promise<QueryResult> => {
               techIcon
             }
           }
+        }
+        workedProjects {
+          id
+          slug
+          title
+          content
         }
       }
     }

@@ -3,14 +3,8 @@
 import { useAppContext } from "@/context/app.context";
 import BarProjects from "../_components/bar-projects";
 import CardProjects from "../_components/card-projects";
-import {
-  ICompanyWorked,
-  ICompanyWorkedFather,
-  ITechnology,
-  QueryResult,
-} from "../services";
+import { ICompanyWorked, ITechnology, QueryResult } from "../services";
 import { useEffect, useState } from "react";
-import { RichTextContent } from "@graphcms/rich-text-types";
 
 interface CompanyWorked {
   projectWorkedId: string;

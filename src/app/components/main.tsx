@@ -2,30 +2,24 @@
 
 import { useEffect, useState } from "react";
 
-import Image from "next/image";
 import { Information } from "../information";
 import { useAppContext } from "@/context/app.context";
 
-import { IoIosCloudDownload } from "react-icons/io";
-
 import { SocialMediaTab } from "./social-medias.tab";
-import BarProjects from "../_components/bar-projects";
-import { IProjectTecnologies, PageHome, QueryResult } from "../services";
+import { PageHome, QueryResult } from "../services";
 
 import { RichText } from "../_components/rich-text";
 import { Technologies as TechComponent } from "../_components/tecnologies";
 import { ProjectTechnologies } from "./project-tecnologies";
 import { CmsIcon } from "../services/cms-icon";
 import { substitutionStrinHW } from "../utils/svg-height-width";
-import Section from "../_components/section.component";
-import CardProjects from "../_components/card-projects";
-import CardProjectCoponent from "../_components/card-projects.component";
 import SectionTecnologies from "../_components/section-tecnologies";
 import PictureView from "../_components/picture-view";
 import { DownloadCurriculo } from "../_components/download-curriculo";
 import Link from "next/link";
 import { TransformNumberPhoneInInternational } from "../utils/transform-number-tel-format-international";
 import SectionCompanies from "../_components/section-companies";
+import { SectionProjects } from "../_components/section-projects";
 
 const information = Information;
 
